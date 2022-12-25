@@ -2,6 +2,22 @@
     background-color: grey;
 }
 
+.start-quiz-button {
+
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+
+
+
 .question-box {
     background-color: lightblue;
     border:5px solid black;
@@ -16,7 +32,20 @@
     text-indent: 10px;
     font-size: 30px;
     
+    
 }
+
+/* This is for toggling the display of the question box afer "start quiz" button is pressed */
+.question-box {
+    display: none;
+}
+
+.welcome-message, .start-quiz-button{
+    display: block;
+}
+
+
+
 
 .answer-box {
 
@@ -27,7 +56,7 @@ text-indent: 50px;
 color: brown;
 font-weight: bolder;
 font-size: 25px;
-border: 5px solid yellow;
+/* border: 5px solid yellow; */
 /* background-color: lightpink; */
 }
 
