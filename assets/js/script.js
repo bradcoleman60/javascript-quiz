@@ -4,23 +4,18 @@
 
 
 
-// function setTime(secondsLeft) {
-//     var secondsLeft = 100
-//     var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       console.log(secondsLeft + " Seconds left.");
-//     //   document.getElementById('counter').innerHTML = secondsLeft;
-//     if(secondsLeft === 0) {
-//       clearInterval(timerInterval);
- 
-//     }
-//   }, 400);
-// }
-// setTime(500)
-// //  console.log(secondsLeft)
-
-// document.getElementById('counter').innerHTML = secondsLeft;
-
+function setTimer() {
+    var secondsLeft = 100
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+        }
+    document.getElementById('counter').innerHTML = "Seconds Remaining = " + secondsLeft;
+  }, 1000);
+  
+//   console.log(secondsLeft)
+}
 
 /////////////////////////////////////////////////////////////
 ///////////////TEST QUESTION AND ANSWERS - Set up as a Nested Array/////////////////////
@@ -40,12 +35,17 @@ answerAdom.children[3].textContent = questionBank[questionNumber][4];
 console.log(questionDom);
 console.log(answerAdom);
 
-//////Sets start quiz function.  This removes the welcome message and start quiz button and starts the quiz. 
+///////////////////////////////////////////////////////////
+
+//////Sets start quiz function.  This removes the welcome message and start quiz button and starts the quiz./////// 
 var welcomeDom = document.querySelector(".welcome-message")
 
 function startQuiz() {
 welcomeDom.setAttribute("style", "display: none");
 questionDom.setAttribute("style", "display: block");
+setTimer()
 }
 
 console.log(welcomeDom)
+
+/////////////////////////////////////////////////////////
