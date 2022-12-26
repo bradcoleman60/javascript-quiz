@@ -14,16 +14,21 @@
       </header>
       
         <div class="welcome-message">
-          <h2>Welcome - If you want to test your Knowledge of Javascript, take this timed multiple choice quiz.  To start the quiz hit the "start quiz" buttom below.</h2>
-        
-        
+            <h2>Welcome - If you want to test your Knowledge of Javascript, take this timed multiple choice quiz.  To start the quiz hit the "start quiz" buttom below.</h2>
             <button type="button" class="start-quiz-button"  onclick="startQuiz()">Start Quiz</button>
         
         </div>
+        
         <div class="countdown">
           <p id="counter"></p>
-            
         </div>
+        
+        <div id="end-of-quiz-message">
+            <p></p>
+        </div>
+
+
+        
         <div class="question-box">
           <p class="the-question">The Question is here</p>
             <div class="answer-box">
@@ -37,9 +42,27 @@
           <button id="submit" class="btn">Submit your answer</button>
             </div>
         </div>
-        </div>
-      
+        
+        
+
+<form>
+<input type="radio" value="a" name="test-box"> Answer A <br>
+<input type="radio" value="b" name="test-box"> Answer B<br>
+<input type="radio" value="c" name="test-box"> Answer C<br>
+<input type="radio" value="d" name="test-box"> Answer D<br><br>
+
+<button type="button" onclick="radiofunction()">Submit</button>
+</form>
+
+
+<div id="result"></div>
+
+        
     
+       
+
+
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

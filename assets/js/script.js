@@ -5,13 +5,17 @@
 
 
 function setTimer() {
-    var secondsLeft = 100
+    var secondsLeft = 5
     var timerInterval = setInterval(function() {
       secondsLeft--;
     if(secondsLeft === 0) {
-      clearInterval(timerInterval);
+      clearInterval(timerInterval)
+            endOfQuizMessage();
+     
         }
     document.getElementById('counter').innerHTML = "Seconds Remaining = " + secondsLeft;
+
+    
   }, 1000);
   
 //   console.log(secondsLeft)
@@ -49,3 +53,45 @@ setTimer()
 console.log(welcomeDom)
 
 /////////////////////////////////////////////////////////
+
+///////////This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
+
+// var endOfQuizDom = document.querySelector(".end-of-quiz-message");
+// var counter = document.querySelector(".countdown")
+
+// console.log("end of quix dom:  " + endOfQuizDom);
+// console.log("this is the counter DOM" + counter)
+
+// function endOfQuizMessage(){
+//     document.getElementById('end-of-quiz-message').innerHTML = "The time is over and the quiz is done";
+
+// };
+
+
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////Testing of radio button submit feature/////////////////////
+
+function radiofunction(){
+    var choiceMade = document.getElementsByName('test-box');
+
+    for (i=0; i < choiceMade.length; i++){
+        if(brad[i].checked)
+        document.getElementById("result").innerHTML = "The answer is:" + choiceMade[i].value;
+        
+    }
+    console.log("brad length:  " + choiceMade.length)
+        console.log(choiceMade)
+        console.log(choiceMade[0].checked)
+        console.log(choiceMade[1].checked)
+        console.log(choiceMade[2].checked)
+        console.log(choiceMade[3].checked)
+}
+
+var brad = document.getElementsByName("test-box");
+console.log(brad.length)
+
+///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
