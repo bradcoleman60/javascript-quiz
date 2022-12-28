@@ -9,14 +9,13 @@
   </head>
   <body>
     
-      <header>
-        <h1>Test your JavaScript Knowledge</h1>
-      </header>
+        <header>
+            <h1>Test your JavaScript Knowledge</h1>
+        </header>
       
         <div class="welcome-message">
             <h2>Welcome - If you want to test your Knowledge of Javascript, take this timed multiple choice quiz.  To start the quiz hit the "start quiz" buttom below.</h2>
             <button type="button" class="start-quiz-button"  onclick="startQuiz()">Start Quiz</button>
-        
         </div>
         
         <div class="countdown">
@@ -26,44 +25,27 @@
         <div id="end-of-quiz-message">
             <p></p>
         </div>
-
-
-        
-        <div class="question-box">
-          <p class="the-question">The Question is here</p>
-            <div class="answer-box">
-          <p id="choice-a">Answer A </p>
-          <p id="choice-b">Answer B</p>
-          <p id="choice-c">Answer C </p>
-          <p id="choice-d">Answer D</p>
-          </div>
-          
-          <div class="submit-box">
-          <button id="submit" class="btn">Submit your answer</button>
-            </div>
+                
+        <!-- this is a test of combining question box and answer box -->
+        <div class="question-box-1">
+            <p class="the-question-1">The Question is here</p>
+              <div class="answer-box-1">
+            
+                    <form class="submission-form-1">
+                        <input type="radio" value="a" name="test-box-1"><label>Answer A</label> <br>
+                        <input type="radio" value="b" name="test-box-1"><label>Answer B</label> <br>
+                        <input type="radio" value="c" name="test-box-1"><label>Answer C</label> <br>
+                        <input type="radio" value="d" name="test-box-1"><label>Answer D</label><br>
+                
+                        <button type="button" onclick="radiofunction()">Submit</button>
+                    </form>  
+                </div>
         </div>
+            
+              
+        <div id="result"></div> 
         
-        
-
-<form class="submission-form">
-<input type="radio" value="a" name="test-box"> Answer A<br>
-<input type="radio" value="b" name="test-box"> Answer B<br>
-<input type="radio" value="c" name="test-box"> Answer C<br>
-<input type="radio" value="d" name="test-box"> Answer D<br><br>
-
-<button type="button" onclick="radiofunction()">Submit</button>
-</form>
-
-
-<div id="result"></div>
-
-        
-    
-       
-
-
-
-    <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/script.js"></script>
   </body>
 </html>
 

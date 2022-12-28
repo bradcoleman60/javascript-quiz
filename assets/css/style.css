@@ -20,25 +20,25 @@
 }
 
 
-.question-box {
+
+/* test */
+.question-box-1 {
     background-color: lightblue;
     border:5px solid black;
     border-radius: 40px;
-    
-    
-    
+        
 }
 
-.question-box p {
+
+.question-box-1 p {
     background-color: lightblue;
     text-indent: 10px;
-    font-size: 30px;
-    
-    
+    font-size: 30px; 
 }
 
 /* This is for toggling the display of the question box afer "start quiz" button is pressed */
-.question-box {
+
+.question-box-1 {
     display: none;
 }
 
@@ -46,60 +46,39 @@
     display: block;
 }
 
-
-
-
-.answer-box {
-
+.answer-box-1 p {
+    text-indent: 50px;
+    color: brown;
+    font-weight: bolder;
     background-color: lightblue;
-}
-.answer-box p {
-text-indent: 50px;
-color: brown;
-font-weight: bolder;
-font-size: 25px;
-/* border: 5px solid yellow; */
-/* background-color: lightpink; */
+    font-size: 25px;
+    border-radius: 40px;
+    /* border: 5px solid yellow; */
+    /* background-color: lightpink; */
+    }
+
+.submission-form-1 {
+    padding-left: 100px;
+    background-color: lightblue;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+       
 }
 
-.submit-box  {
-    background-color: blueviolet;
-    border: 5px dashed red;
-    text-align: center;
-}
-
-.btn {
-    border-radius: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: red;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.check-box-field {
-    display:block;
-    font-size: 30px;
-}
-
-.submission-form {
+.submission-form-1 label{
+    background-color: lightblue;
     font-size: 26px;
     color: red;
-    padding-left: 30px;
-    background-color: #eee;
-    cursor: pointer;
-    
+    font-weight: bold;
 }
 
-.submission-form input {
-position: relative;
-    height: 25px;
-    width: 25px;
-}
+.submission-form-1 input {
+    position: relative;
+        height: 25px;
+        width: 25px;
+    }
 
-.submission-form button {
+.submission-form-1 button {
 
     border-radius: 20px;
     padding-top: 20px;
