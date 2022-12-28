@@ -1,5 +1,6 @@
 *{
     background-color: grey;
+    border-radius: 50px;
 }
 
 .start-quiz-button {
@@ -20,9 +21,7 @@
 }
 
 
-
-/* test */
-.question-box-1 {
+.question-box {
     background-color: lightblue;
     border:5px solid black;
     border-radius: 40px;
@@ -30,55 +29,61 @@
 }
 
 
-.question-box-1 p {
+.question-box p {
     background-color: lightblue;
     text-indent: 10px;
     font-size: 30px; 
 }
 
+
+
 /* This is for toggling the display of the question box afer "start quiz" button is pressed */
 
-.question-box-1 {
+.question-box {
     display: none;
+    
 }
 
 .welcome-message, .start-quiz-button{
     display: block;
 }
 
-.answer-box-1 p {
+.answer-box p {
     text-indent: 50px;
     color: brown;
     font-weight: bolder;
     background-color: lightblue;
     font-size: 25px;
     border-radius: 40px;
-    /* border: 5px solid yellow; */
-    /* background-color: lightpink; */
+    
     }
 
-.submission-form-1 {
+.submission-form {
     padding-left: 100px;
     background-color: lightblue;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-       
+    
 }
 
-.submission-form-1 label{
+.submission-form label{
     background-color: lightblue;
     font-size: 26px;
     color: red;
     font-weight: bold;
+    
+    
 }
 
-.submission-form-1 input {
-    position: relative;
-        height: 25px;
-        width: 25px;
+.submission-form input {
+    height: 30px;
+    width: 30px;
+    
+    
+        
     }
 
-.submission-form-1 button {
+.submission-form button {
 
     border-radius: 20px;
     padding-top: 20px;
@@ -88,4 +93,9 @@
     background-color: red;
     font-weight: bold;
     font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 15%;
+
+    
 }
