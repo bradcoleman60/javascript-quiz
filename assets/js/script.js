@@ -28,23 +28,30 @@ var answerAdom = document.querySelector(".submission-form")
 var questionBank = [["Question 1 :   What is Javascript?","A - a coffee","B - a car","C - a plane ","D - non of the above "],["Question 2:    What is MYSQL?","A - A plane ","B - a system of items","C - absolutely nothing ","D - All of the above "],["Question 3:    How is an Array different than an Object?","A - An array is longer","B - An object is a noun","C - they are the same","D - An array is a ray of light"],["Question 4:    What does the method BIKE do?","A - Assigns a value to a variable","B - Takes mom to lunch","C - Goes on a bike ride ","D - Never eats at McDonalds"]];
 var questionNumber = 0;
 
-
-
-questionDom.children[0].textContent = questionBank[questionNumber][0];
-answerAdom.children[1].textContent = questionBank[questionNumber][1];
-answerAdom.children[4].textContent = questionBank[questionNumber][2];
-answerAdom.children[7].textContent = questionBank[questionNumber][3];
-answerAdom.children[10].textContent = questionBank[questionNumber][4];
-
-
 //Sets start quiz function.  This removes the welcome message and start quiz button and starts the quiz./////// 
 var welcomeDom = document.querySelector(".welcome-message")
 
 function startQuiz() {
 welcomeDom.setAttribute("style", "display: none");
 questionDom.setAttribute("style", "display: block");
-setTimer()
+setTimer();
+// submitAnswer();
+displayQuestionBox();
+
+
+
 }
+
+//This function displays the question and multiple answers based on the question number. 
+function displayQuestionBox (){
+
+    questionDom.children[0].textContent = questionBank[questionNumber][0];
+    answerAdom.children[1].textContent = questionBank[questionNumber][1];
+    answerAdom.children[4].textContent = questionBank[questionNumber][2];
+    answerAdom.children[7].textContent = questionBank[questionNumber][3];
+    answerAdom.children[10].textContent = questionBank[questionNumber][4];
+}
+
 
 
 //This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
@@ -58,24 +65,29 @@ function endOfQuizMessage(){
 
 var answerBank = ["a","b","c","d"];
 
+
 function submitAnswer(){
         
-    var actualAnswerSelected = document.querySelector('input[name="test-box"]:checked').value;
+    var actualAnswerSelected = document.querySelector('input[type="radio"][name="test-box"]:checked').value;
 
     console.log("questionNumber = " + questionNumber);
-    console.log("THIS IS IT: " + actualAnswerSelected)
+    console.log("CHOICE SELECTED: " + actualAnswerSelected);
+    console.log("THE CORRECT ANSWER IS:  "  + answerBank[questionNumber]);
     document.getElementById("result").innerHTML = actualAnswerSelected;
-    questionNumber++;
-    questionAnswerBox();
+    
     console.log("new number for question number :  " +questionNumber);
     
-
-    if (actualAnswerSelected === answerBank[questionNumber])
+    if (actualAnswerSelected == answerBank[questionNumber])
     {
         console.log("YOU DID IT")
     } else {
         console.log("YOU CRAPPED OUT")
     };
+    
+    questionNumber++;
+    actualAnswerSelected = false;
+    displayQuestionBox();
+    
 }
 
 
