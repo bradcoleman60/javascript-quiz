@@ -83,7 +83,7 @@ function submitAnswer(){
         console.log("YOU DID IT")
     } else {
         secondsLeft = secondsLeft - 5;
-        console.log("YOU CRAPPED OUT")
+        console.log("YOU MISSED THE ANSEWR")
     };
     
     questionNumber++;
@@ -94,4 +94,42 @@ function submitAnswer(){
     
 }
 
+//  localStorage.clear();
 
+function initialsInput(){
+
+    var initialsThatWereInput = document.querySelector('input[type="text-box"][name="initials-input"]').value;
+    
+    
+
+ // This gets what is currently in local storage
+ var leaderBoard = localStorage.getItem('leaderBoard');
+
+ //If local storage does not have an array of scores than this 
+ //creates a new array called leaderBoard1
+ 
+  leaderBoard = leaderBoard ? leaderBoard.split(',') : [];
+ 
+ // This pushes the initials and the current score into the array
+ 
+ leaderBoard.push(initialsThatWereInput, scoreCounter);
+ 
+ // This saves the entire array of leaderboard into localStorage
+ localStorage.setItem('leaderBoard', leaderBoard.toString());
+ 
+ console.log(leaderBoard);
+ 
+ var theList = localStorage.getItem('leaderBoard');
+ 
+ console.log(theList)
+
+
+
+
+}
+
+
+
+
+
+   
