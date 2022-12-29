@@ -2,24 +2,23 @@
 /////////////////////////////////////////////
 //////COUNT DOWN TIMER///////////////////////
 
+var secondsLeft = 20
+
 function setTimer() {
-    var secondsLeft = 5
+    
     var timerInterval = setInterval(function() {
       secondsLeft--;
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
       clearInterval(timerInterval)
             endOfQuizMessage();
-     
+            questionDom.setAttribute("style", "display: none");
         }
     document.getElementById('counter').innerHTML = "Seconds Remaining = " + secondsLeft;
-
-    
+        
   }, 1000);
   
 //   console.log(secondsLeft)
 }
-
-
 
 //This JS sets the question and answer array and pushes the sets of questions and answers to the webpage based on the questionNumber1 variable////////
 
@@ -44,7 +43,7 @@ displayQuestionBox();
 
 //This function displays the question and multiple answers based on the question number. 
 function displayQuestionBox (){
-
+    
     questionDom.children[0].textContent = questionBank[questionNumber][0];
     answerAdom.children[1].textContent = questionBank[questionNumber][1];
     answerAdom.children[4].textContent = questionBank[questionNumber][2];
@@ -57,7 +56,7 @@ function displayQuestionBox (){
 //This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
 
 function endOfQuizMessage(){
-    document.getElementById('end-of-quiz-message').innerHTML = "The time is over and the quiz is done";
+    document.getElementById('end-of-quiz-message').innerHTML = "The time is over and the quiz is done.  Your Score was:" + scoreCounter;
 };
 
 
@@ -65,6 +64,7 @@ function endOfQuizMessage(){
 
 var answerBank = ["a","b","c","d"];
 
+var scoreCounter = 0;
 
 function submitAnswer(){
         
@@ -73,20 +73,24 @@ function submitAnswer(){
     console.log("questionNumber = " + questionNumber);
     console.log("CHOICE SELECTED: " + actualAnswerSelected);
     console.log("THE CORRECT ANSWER IS:  "  + answerBank[questionNumber]);
-    document.getElementById("result").innerHTML = actualAnswerSelected;
+    // document.getElementById("result").innerHTML = actualAnswerSelected;
     
-    console.log("new number for question number :  " +questionNumber);
+    
     
     if (actualAnswerSelected == answerBank[questionNumber])
     {
+        scoreCounter++;
         console.log("YOU DID IT")
     } else {
+        secondsLeft = secondsLeft - 5;
         console.log("YOU CRAPPED OUT")
     };
     
     questionNumber++;
-    actualAnswerSelected = false;
+    console.log("new number for question number :  " + questionNumber);
     displayQuestionBox();
+    console.log(actualAnswerSelected);
+    console.log("Score Counter = " + scoreCounter);
     
 }
 
