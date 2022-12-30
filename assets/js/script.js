@@ -96,11 +96,16 @@ function submitAnswer(){
 
 //  localStorage.clear();
 
+/////Function at End of Quiz to enter Initials and log
+///Score to LeaderBoard///////////////////////////
+
+var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
+
 function initialsInput(){
 
     var initialsThatWereInput = document.querySelector('input[type="text-box"][name="initials-input"]').value;
      
-    var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
+    // var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
 
     if(existingleaderBoard == null) existingleaderBoard = [];
 
@@ -113,3 +118,23 @@ function initialsInput(){
     console.log(JSON.parse(localStorage.getItem("leaderBoard")))
 
 }
+
+///This displays the leaderboard ///////////////
+
+for (let i = 0; i < existingleaderBoard.length; i++)
+
+{
+
+document.write("<tr><td>Initial; " + existingleaderBoard[i].initials +"</td>");
+document.write("<tr><td>Score: " +  existingleaderBoard[i].score +"</td><br>");
+}
+
+console.log(JSON.stringify(existingleaderBoard));
+
+console.log(existingleaderBoard[2].initials)
+
+// console.log(leaderBoardX)
+
+// const object1 = {a: "somestring", b: 42, c: false} ;
+
+
