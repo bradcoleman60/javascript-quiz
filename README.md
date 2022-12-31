@@ -23,4 +23,5 @@ Create components first
     7. Should i put all global variables in one place on the JS file? 
     8. Add ability to not enter initials "No thanks, but show me the leader board"
     9. format the leaderbaord table
+    10. create another js file to hold the questions to make more module. 
 

@@ -10,7 +10,7 @@
   <body>
     
         <header>
-            <h1>Test your JavaScript Knowledge</h1>
+            <h1>JavaScript Knowledge Quiz</h1>
         </header>
       
         <div class="welcome-message">
@@ -26,16 +26,16 @@
             <p></p>
         </div>
                 
-        <!-- this is a test of combining question box and answer box -->
+      
         <div class="question-box">
             <p class="the-question">The Question is here</p>
               <div class="answer-box">
             
                     <form class="submission-form">
-                        <input type="radio" value="a" name="test-box"><label>Answer A</label> <br>
-                        <input type="radio" value="b" name="test-box"><label>Answer B</label> <br>
-                        <input type="radio" value="c" name="test-box"><label>Answer C</label> <br>
-                        <input type="radio" value="d" name="test-box"><label>Answer D</label><br>
+                        <input type="radio" value="a" name="answer-choice"><label>Answer A</label> <br>
+                        <input type="radio" value="b" name="answer-choice"><label>Answer B</label> <br>
+                        <input type="radio" value="c" name="answer-choice"><label>Answer C</label> <br>
+                        <input type="radio" value="d" name="answer-choice"><label>Answer D</label><br>
                 
                         <button type="button" onclick="submitAnswer()">Submit</button>
                     </form>  
@@ -46,9 +46,9 @@
         <div id="result"></div> 
 
         <div class="initialsInput">
-          <input type="text-box" name="initials-input" maxlength="3"> Input your initials
+          <input type="text-box" name="initials-input" maxlength="3" placeholder="Input your initials here" required>
           <button type="submit" onclick="initialsInput()">Submit</button>
-
+          <button type="submit" onclick="displayLeaderboard()">No, thanks show me the leaderboard</button>
         </div>
         
         <table id="leaderboard-table">
@@ -61,6 +61,8 @@
 
 
         <script src="./assets/js/script.js"></script>
+      
+        
   </body>
 </html>
 

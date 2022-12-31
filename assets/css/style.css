@@ -1,5 +1,5 @@
 *{
-    background-color: grey;
+    background-color: lightgray;
     border-radius: 50px;
 }
 
@@ -16,10 +16,22 @@
     
 }
 
-.count-down {
-    display: block;
+.countdown  {
+    display: none;
+    float: right;
+    background-color: black;
+    font-size: 50px;
+    color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
+.countdown p {
+    background-color: black;
+}
 
 .question-box {
     background-color: lightblue;
@@ -78,8 +90,7 @@
 .submission-form input {
     height: 30px;
     width: 30px;
-    
-    
+      
         
     }
 
@@ -105,11 +116,16 @@
     border-radius: 0px;
     padding: 4px;
     margin: 0px;
-    
+    background-color: white;
     }
 
 table{
     border-collapse: collapse;
     margin-left: 50px;
     padding: 40px;
+    
 }
+
+/* .initialsInput .input {
+    background-color: white;
+} */
