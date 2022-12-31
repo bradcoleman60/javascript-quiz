@@ -51,8 +51,6 @@ function displayQuestionBox (){
     answerAdom.children[10].textContent = questionBank[questionNumber][4];
 }
 
-
-
 //This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
 
 function endOfQuizMessage(){
@@ -70,28 +68,17 @@ function submitAnswer(){
         
     var actualAnswerSelected = document.querySelector('input[type="radio"][name="test-box"]:checked').value;
 
-    console.log("questionNumber = " + questionNumber);
-    console.log("CHOICE SELECTED: " + actualAnswerSelected);
-    console.log("THE CORRECT ANSWER IS:  "  + answerBank[questionNumber]);
-    // document.getElementById("result").innerHTML = actualAnswerSelected;
-    
-    
-    
     if (actualAnswerSelected == answerBank[questionNumber])
     {
         scoreCounter++;
-        console.log("YOU DID IT")
+        
     } else {
         secondsLeft = secondsLeft - 5;
-        console.log("YOU MISSED THE ANSEWR")
     };
     
     questionNumber++;
-    console.log("new number for question number :  " + questionNumber);
-    displayQuestionBox();
-    console.log(actualAnswerSelected);
-    console.log("Score Counter = " + scoreCounter);
     
+    displayQuestionBox();
 }
 
 //  localStorage.clear();
@@ -101,12 +88,14 @@ function submitAnswer(){
 
 var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
 
+console.log(existingleaderBoard)
+
+
+
 function initialsInput(){
 
     var initialsThatWereInput = document.querySelector('input[type="text-box"][name="initials-input"]').value;
      
-    // var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
-
     if(existingleaderBoard == null) existingleaderBoard = [];
 
     var newScore = {"initials" : initialsThatWereInput, "score" : scoreCounter } ;
@@ -115,26 +104,30 @@ function initialsInput(){
 
     localStorage.setItem("leaderBoard", JSON.stringify(existingleaderBoard));
 
-    console.log(JSON.parse(localStorage.getItem("leaderBoard")))
+    existingleaderBoard.sort((a,b)=> (a.score - b.score));
+    console.log(existingleaderBoard)
 
+    displayLeaderboard()
 }
 
-///This displays the leaderboard ///////////////
+
+
+
+///This function displays the leaderboard ///////////////
+var table = document.getElementById("leaderboard-table");
+
+function displayLeaderboard(){
 
 for (let i = 0; i < existingleaderBoard.length; i++)
 
 {
-
-document.write("<tr><td>Initial; " + existingleaderBoard[i].initials +"</td>");
-document.write("<tr><td>Score: " +  existingleaderBoard[i].score +"</td><br>");
+    var row = table.insertRow(1);
+    var initialsCell = row.insertCell(0);
+    var scoreCell = row.insertCell(1);
+    initialsCell.innerHTML = existingleaderBoard[i].initials;
+    scoreCell.innerHTML = existingleaderBoard[i].score;
+    
 }
-
-console.log(JSON.stringify(existingleaderBoard));
-
-console.log(existingleaderBoard[2].initials)
-
-// console.log(leaderBoardX)
-
-// const object1 = {a: "somestring", b: 42, c: false} ;
+}
 
 

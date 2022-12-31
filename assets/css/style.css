@@ -99,3 +99,17 @@
 
     
 }
+
+.leaderboard-table tr, th, td{
+    border: 2px solid black;
+    border-radius: 0px;
+    padding: 4px;
+    margin: 0px;
+    
+    }
+
+table{
+    border-collapse: collapse;
+    margin-left: 50px;
+    padding: 40px;
+}

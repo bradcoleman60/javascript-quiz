@@ -11,3 +11,16 @@ Create components first
     - Link the JS file 
     - Create the questions - but just start with an array of an array first - keep it simple so I can see the pieces,
     - Create a start quiz button that changes the CSS to display the question box. 
+
+    Still to do:
+
+    1. Tigten up all CSS
+    2. Clear the check box after submission of answer
+    3. Develop the actual questions
+    4. Edit function Display Leader Board with conditional CSS
+    5. Sort the leader board highest to lowest and add %
+    6. Add something to time if person completes quiz before the time expires - to invoke "display: none" for the question and answer box. 
+    7. Should i put all global variables in one place on the JS file? 
+    8. Add ability to not enter initials "No thanks, but show me the leader board"
+    9. format the leaderbaord table
+
