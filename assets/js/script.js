@@ -2,15 +2,14 @@
 /////////////////////////////////////////////
 //////COUNT DOWN TIMER///////////////////////
 
-var secondsLeft = 15
+var secondsLeft = 100
 var countDownDom = document.querySelector(".countdown")
 
-console.log(countDownDom)
 function setTimer() {
     
     var timerInterval = setInterval(function() {
       secondsLeft--;
-    if(secondsLeft <= 0) {
+    if(secondsLeft <= 0 || answeredQuestions === questionBank.length) {
       clearInterval(timerInterval)
             endOfQuizMessage();
             questionDom.setAttribute("style", "display: none");
@@ -26,36 +25,35 @@ function setTimer() {
 //This JS sets the question and answer array and pushes the sets of questions and answers to the webpage based on the questionNumber1 variable////////
 
 var questionDom = document.querySelector(".question-box");
-var answerDom = document.querySelector(".submission-form")
 
-// var questionBank = questionBankFromOtherFile;
 
-var questionBank = [["Question 1 :   What is Javascript?","A - a coffee","B - a car","C - a plane ","D - non of the above "],["Question 2:    What is MYSQL?","A - A plane ","B - a system of items","C - absolutely nothing ","D - All of the above "],["Question 3:    How is an Array different than an Object?","A - An array is longer","B - An object is a noun","C - they are the same","D - An array is a ray of light"],["Question 4:    What does the method BIKE do?","A - Assigns a value to a variable","B - Takes mom to lunch","C - Goes on a bike ride ","D - Never eats at McDonalds"]];
+var questionBank = [["Question 1 :   Javascript was first known as?","A - SuperScript","B - LiveScript","C - Netscape Scripter","D - non of the above ","b"],["Question 2:    All of the following are benefits of using JavaScript except:","A - Less server interation thus less server traffic","B - Visitors do nor have to wait for the page to reload","C - Increased interactivity like reactions when users hover over an element","D - Supports multithreading","d"],["Question 3:    What tag is used to link a JavaScript file to a website?","A - <script>….</script>","B - <script>","C - <Jscript>…</Jscript>","D - <JayScripter>…</JayScripter","a"],["Question 4:    Which of the following are the two scopes variables can have in JavaScript?","A - Intenational and local","B - Large and small","C - Global and local","D - Global and remote","c"],["Question 5:    All of the following are primitive data types in JavaScript except","A - Numbers","B - Strings","C - Boolean","D - Null","d"],["Question 6:    Which of the following is a reserved word in JavaScript?","A - Volatility","B - Case","C - Continuation","D - without","b"],["Question 7:    Which of the following is not a supported opeator in JavaScript?","A - Arithmetic Operators","B - Comparison Operators","C - Smooth Operators","D - Logical Operators","c"],["Question 8:    What is a function in JavaScript?","A - Built-on code snippets that can be used in your program","B - Arithemetic calculators like sum and average","C - A group of reusable code that can can called anywhere in your program","D - An event ","c"],["Question 9:    A return statement in a function is:","A - Always required","B - Only required if a FOR LOOP is used in the function","C - Never included in a function","D - Required if you want to return a value from the function","d"],["Question 10:    Which of the following is a string method?","A - CharAt()","B - pop()","C - map()","D - unshift()","a"]];
 
 var questionNumber = 0;
 
 //Sets start quiz function.  This removes the welcome message and start quiz button and starts the quiz./////// 
-var welcomeDom = document.querySelector(".welcome-message")
 
 function startQuiz() {
-welcomeDom.setAttribute("style", "display: none");
-questionDom.setAttribute("style", "display: block");
-countDownDom.setAttribute("style", "display:block")
-setTimer();
-// submitAnswer();
-displayQuestionBox();
 
-}
+    var welcomeDom = document.querySelector(".welcome-message")
+    welcomeDom.setAttribute("style", "display: none");
+    questionDom.setAttribute("style", "display: block");
+    countDownDom.setAttribute("style", "display:block")
+    setTimer();
+    displayQuestionBox();
+
+};
 
 //This function displays the question and multiple answers based on the question number. 
 function displayQuestionBox (){
-    
+
+    var answerDom = document.querySelector(".submission-form");
     questionDom.children[0].textContent = questionBank[questionNumber][0];
     answerDom.children[1].textContent = questionBank[questionNumber][1];
     answerDom.children[4].textContent = questionBank[questionNumber][2];
     answerDom.children[7].textContent = questionBank[questionNumber][3];
     answerDom.children[10].textContent = questionBank[questionNumber][4];
-}
+};
 
 //This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
 
@@ -66,25 +64,26 @@ function endOfQuizMessage(){
 
 //Gets value of selected radio and compares to the answer bank /////////////////////
 
-var answerBank = ["a","b","c","d"];
-
 var scoreCounter = 0;
+var answeredQuestions = 0;
 
 function submitAnswer(){
         
     var actualAnswerSelected = document.querySelector('input[type="radio"][name="answer-choice"]:checked').value;
 
-    if (actualAnswerSelected == answerBank[questionNumber])
-    {
+    if (actualAnswerSelected === questionBank[questionNumber][5]){
         scoreCounter++;
+        answeredQuestions++;
         
     } else {
         secondsLeft = secondsLeft - 5;
+        answeredQuestions++;
     };
     
-    questionNumber++;
-    
-    displayQuestionBox();
+    if (answeredQuestions < questionBank.length){
+        questionNumber++;
+        displayQuestionBox();
+    }
 }
 
 //  localStorage.clear();
@@ -113,26 +112,27 @@ function initialsInput(){
     localStorage.setItem("leaderBoard", JSON.stringify(existingleaderBoard));
 
     existingleaderBoard.sort((a,b)=> (a.score - b.score));
-    console.log(existingleaderBoard);
-    console.log(initialsThatWereInput);
-    displayLeaderboard()
+    
+    displayLeaderboard();
     }
 }
 
-///This function displays the leaderboard ///////////////
-var table = document.getElementById("leaderboard-table");
+//////This function displays the leaderboard ///////////////
+
 
 function displayLeaderboard(){
+    var table = document.getElementById("leaderboard-table");
 
-for (let i = 0; i < existingleaderBoard.length; i++)
-
-{
-    var row = table.insertRow(1);
-    var initialsCell = row.insertCell(0);
-    var scoreCell = row.insertCell(1);
-    initialsCell.innerHTML = existingleaderBoard[i].initials.toUpperCase();
-    scoreCell.innerHTML = existingleaderBoard[i].score;
+    for (let i = 0; i < existingleaderBoard.length; i++){
+        var row = table.insertRow(1);
+        var initialsCell = row.insertCell(0);
+        var scoreCell = row.insertCell(1);
+        initialsCell.innerHTML = existingleaderBoard[i].initials.toUpperCase();
+        scoreCell.innerHTML = existingleaderBoard[i].score;
     }
 }
 
-
+function clearLeaderboard() {
+    localStorage.clear();
+    displayLeaderboard();
+}
