@@ -117,7 +117,7 @@ function initialsInput(){
      
     if(existingleaderBoard == null) existingleaderBoard = [];
 
-    var newScore = {"initials" : initialsThatWereInput, "score" : scoreCounter } ;
+    var newScore = {"initials" : initialsThatWereInput, "score" : scoreCounter , "percentage": (scoreCounter /= 10).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:0})};
 
     existingleaderBoard.push(newScore);
 
@@ -146,8 +146,10 @@ function displayLeaderboard(){
         var row = table.insertRow(1);
         var initialsCell = row.insertCell(0);
         var scoreCell = row.insertCell(1);
+        var percentageCell = row.insertCell(2);
         initialsCell.innerHTML = existingleaderBoard[i].initials.toUpperCase();
         scoreCell.innerHTML = existingleaderBoard[i].score;
+        percentageCell.innerHTML = existingleaderBoard[i].percentage;
     }
 }
 
