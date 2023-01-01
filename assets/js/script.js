@@ -46,6 +46,7 @@ function startQuiz() {
 
 //This function displays the question and multiple answers based on the question number. 
 
+///THIS WORKS BEFORE I TESTED THE SUBMIT BUTTON ONLY APPROACH
 function displayQuestionBox (){
     
     var answerDom = document.querySelector(".submission-form");
@@ -55,15 +56,6 @@ function displayQuestionBox (){
     answerDom.children[7].textContent = questionBank[questionNumber][3];
     answerDom.children[10].textContent = questionBank[questionNumber][4];
 };
-
-
-
-
-
-
-
-
-
 
 
 //This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
@@ -78,9 +70,15 @@ function endOfQuizMessage(){
 var scoreCounter = 0;
 var answeredQuestions = 0;
 
+
+var NewValueSubmit = document.querySelector(".btn");  
+    console.log(NewValueSubmit);  
+
+
 function submitAnswer(){
-        
+        //WORKED BEFORE THE TEST OF THE SUBMIT BUTTON ONLY APPROACH
     var actualAnswerSelected = document.querySelector('input[type="radio"][name="answer-choice"]:checked').value;
+
 
     if (actualAnswerSelected === questionBank[questionNumber][5]){
         scoreCounter++;
