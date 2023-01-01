@@ -75,14 +75,18 @@
     background-color: lightblue;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    border: 5px solid red;
+    
     
 }
 
 .submission-form label{
-    background-color: lightblue;
+    background-color: blue;
     font-size: 26px;
     color: red;
-    font-weight: bold;
+    /* font-weight: bold; */
+    padding: 5px;
+    margin: 20px;
     
     
 }
@@ -90,9 +94,14 @@
 .submission-form input {
     height: 30px;
     width: 30px;
-      
-        
+    border: 5px dashed black;
+             
     }
+
+.input[type="radio"]{
+    margin-top: -1px;
+    vertical-align: center;
+}
 
 .submission-form button {
 
@@ -105,8 +114,9 @@
     font-weight: bold;
     font-size: 20px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: -1px;
     margin-left: 15%;
+    
 
     
 }

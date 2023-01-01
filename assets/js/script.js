@@ -2,7 +2,7 @@
 /////////////////////////////////////////////
 //////COUNT DOWN TIMER///////////////////////
 
-var secondsLeft = 100
+var secondsLeft = 1000
 var countDownDom = document.querySelector(".countdown")
 
 function setTimer() {
@@ -45,6 +45,7 @@ function startQuiz() {
 };
 
 //This function displays the question and multiple answers based on the question number. 
+
 function displayQuestionBox (){
     
     var answerDom = document.querySelector(".submission-form");
@@ -54,6 +55,16 @@ function displayQuestionBox (){
     answerDom.children[7].textContent = questionBank[questionNumber][3];
     answerDom.children[10].textContent = questionBank[questionNumber][4];
 };
+
+
+
+
+
+
+
+
+
+
 
 //This function adds the end of quiz messgae after the timer reaches the end////////////////////////////
 
@@ -95,7 +106,7 @@ function submitAnswer(){
 
 var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
 
-console.log(existingleaderBoard)
+// console.log(existingleaderBoard)
 
 function initialsInput(){
 
