@@ -46,7 +46,7 @@ function startQuiz() {
 
 //This function displays the question and multiple answers based on the question number. 
 function displayQuestionBox (){
-
+    
     var answerDom = document.querySelector(".submission-form");
     questionDom.children[0].textContent = questionBank[questionNumber][0];
     answerDom.children[1].textContent = questionBank[questionNumber][1];
@@ -84,6 +84,8 @@ function submitAnswer(){
         questionNumber++;
         displayQuestionBox();
     }
+    var touncheckRadio = document.querySelector('input[type="radio"][name="answer-choice"]:checked');
+    touncheckRadio.checked = false;
 }
 
 //  localStorage.clear();
