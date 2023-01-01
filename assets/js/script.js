@@ -2,17 +2,18 @@
 /////////////////////////////////////////////
 //////COUNT DOWN TIMER///////////////////////
 
-var secondsLeft = 1000
+var secondsLeft = 10
 var countDownDom = document.querySelector(".countdown")
 
 function setTimer() {
-    
+    var initialsDom = document.querySelector(".initialsInput");
     var timerInterval = setInterval(function() {
       secondsLeft--;
     if(secondsLeft <= 0 || answeredQuestions === questionBank.length) {
       clearInterval(timerInterval)
             endOfQuizMessage();
             questionDom.setAttribute("style", "display: none");
+            initialsDom.setAttribute("style", "display: block");
              }
         
         document.getElementById('counter').innerHTML =  secondsLeft;
@@ -132,6 +133,13 @@ function initialsInput(){
 
 
 function displayLeaderboard(){
+
+    var initialsDom = document.querySelector(".initialsInput");
+    initialsDom.setAttribute("style", "display: none");
+    var leaderDom = document.querySelector(".leaderboard-table")
+    leaderDom.setAttribute("style", "display: block");
+
+
     var table = document.getElementById("leaderboard-table");
 
     for (let i = 0; i < existingleaderBoard.length; i++){
@@ -143,7 +151,5 @@ function displayLeaderboard(){
     }
 }
 
-function clearLeaderboard() {
-    localStorage.clear();
-    displayLeaderboard();
-}
+
+

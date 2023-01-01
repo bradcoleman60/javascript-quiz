@@ -41,27 +41,23 @@
                       <button type="button" onclick="submitAnswer()">Submit</button>
                   </form>  
                   
-
-
-
                 </div>
         </div>
             
               
         <div id="result"></div> 
 
-        <div class="initialsInput">
+        <div class="initialsInput" id="initialsInput">
           <input type="text-box" name="initials-input" maxlength="3" placeholder="Input your initials here" required>
           <button type="submit" onclick="initialsInput()">Submit</button>
           <button type="submit" onclick="displayLeaderboard()">No, thanks show me the leaderboard</button>
         </div>
         
-        <table id="leaderboard-table">
+        <table class="leaderboard-table"  id="leaderboard-table">
           <tr>
             <th>Initials</th>
             <th>Score</th>
           </tr>
-          <button onclick="clearLeaderboard()">Clear Leaderboard</button>
         </table>
 
 
