@@ -2,6 +2,7 @@
     background-color: lightgray;
 }
 
+
 .start-quiz-button {
 
     border-radius: 20px;
@@ -114,7 +115,7 @@ input[type="radio"] {
     
 }
 
-.leaderboard-table tr, th, td{
+.leaderboard-table td{
     border: 2px solid black;
     border-radius: 0px;
     padding: 4px;
@@ -122,6 +123,14 @@ input[type="radio"] {
     background-color: white;
     text-align: center;
     }
+
+.leaderboard-table th {
+    background-color: darkgray;
+    border: 2px solid black;
+    overflow-wrap: break-word;
+    width: 80px;
+    vertical-align: bottom;
+}
 
 table{
     border-collapse: collapse;

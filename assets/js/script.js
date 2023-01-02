@@ -2,7 +2,7 @@
 /////////////////////////////////////////////
 //////COUNT DOWN TIMER///////////////////////
 
-var secondsLeft = 10
+var secondsLeft = 1000
 var countDownDom = document.querySelector(".countdown")
 
 function setTimer() {
@@ -117,7 +117,7 @@ function initialsInput(){
      
     if(existingleaderBoard == null) existingleaderBoard = [];
 
-    var newScore = {"initials" : initialsThatWereInput, "score" : scoreCounter , "percentage": (scoreCounter /= 10).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:0})};
+    var newScore = {"initials" : initialsThatWereInput, "score" : scoreCounter , "percentage": (scoreCounter /= questionBank.length).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:0})};
 
     existingleaderBoard.push(newScore);
 
