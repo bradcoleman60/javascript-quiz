@@ -1,9 +1,16 @@
 
+///Global variables
+
+var secondsLeft = 5
+var countDownDom = document.querySelector(".countdown")
+
+
+
+
 /////////////////////////////////////////////
 //////COUNT DOWN TIMER///////////////////////
 
-var secondsLeft = 1000
-var countDownDom = document.querySelector(".countdown")
+
 
 function setTimer() {
     var initialsDom = document.querySelector(".initialsInput");
@@ -13,7 +20,7 @@ function setTimer() {
       clearInterval(timerInterval)
             endOfQuizMessage();
             questionDom.setAttribute("style", "display: none");
-            initialsDom.setAttribute("style", "display: block");
+            initialsDom.setAttribute("style", "display: inline-block");
              }
         
         document.getElementById('counter').innerHTML =  secondsLeft;

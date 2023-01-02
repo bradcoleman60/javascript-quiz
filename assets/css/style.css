@@ -2,6 +2,35 @@
     background-color: lightgray;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 60px;
+    background-color: black;
+    
+}
+
+.title-bar {
+    background-color: black;
+      
+
+}
+
+
+.title-bar h1 {
+    font-size: 36px;
+    margin-top: 5px;
+    color: white;
+    margin-left: 30px;
+    margin-right: 30px; 
+    background-color: black;
+}
+
+.welcome-message p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
 
 .start-quiz-button {
 
@@ -13,21 +42,30 @@
     background-color: red;
     font-weight: bold;
     font-size: 20px;
+    /* float: left; */
+    
+    
     
 }
 
 .countdown  {
     display: none;
     background-color: black;
-    font-size: 50px;
+    font-size: 36px;
+    font-weight: bold;
     color: white;
-    margin-left: 40%;
-    margin-right: 40%;
-    text-align: center;
+    /* margin-left: 40%; */
+    margin-right: 50px;
+    /* text-align: center; */
+    /* flex-direction: row; */
+    /* border: 5px solid yellow; */
+    /* padding: 30px; */
 }
 
 .countdown p {
     background-color: black;
+    /* border: 5px dashed ; */
+    margin-top: 5px;
 }
 
 .question-box {
@@ -38,11 +76,12 @@
         
 }
 
-
 .question-box p {
     background-color: lightblue;
-    text-indent: 10px;
+    position: relative;
+    padding-left: 56px;
     font-size: 30px; 
+    text-indent: -36px;
 }
 
 
@@ -56,9 +95,18 @@
 
 .welcome-message, .start-quiz-button{
     display: block;
+    
 }
 
+.welcome-message {
+    margin-left: 30px;
+    margin-right: 30px;
+}
 
+.start-quiz-button {
+    margin-top: 50px;
+    margin-left: 40%;
+}
 
 .submission-form {
     padding-left: 50px;
@@ -71,7 +119,6 @@
 }
 
 .submission-form label{
-    
     display: block;
     background-color: #d1d1d1;
     padding: 10px ;
@@ -88,7 +135,6 @@
 
 input[type="radio"] {
     display: none;
-
 }
 
 .submission-form input[type="radio"]:checked+label{
@@ -99,7 +145,6 @@ input[type="radio"] {
 
 
 .submission-form button {
-
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -111,8 +156,12 @@ input[type="radio"] {
     margin-left: 40%;
     margin-right: 40%;
     margin-bottom: 15px;
-    
-    
+        
+}
+
+.end-of-quiz-message {
+    margin-left: 30px;
+    font-size: 30px;
 }
 
 .leaderboard-table td{
@@ -136,13 +185,47 @@ table{
     border-collapse: collapse;
     margin-left: 50px;
     padding: 40px;
-    
-}
+   }
 
 .initialsInput{
     display: none;
+    justify-items: center;
 }
 
 .leaderboard-table{
     display: none;
+}
+
+.initialsInput input [type=text] {
+    /* width: 75%; */
+    /* align-items: center; */
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    /* margin-left: auto;
+    margin-right: auto; */
+    border-radius: 4px;
+    border: 2px solid green;
+}
+
+.initialsInput input {
+    border: 2px solid red;
+    padding: 5px;
+    width: 100px;
+    font-size: 30px;
+}
+
+.initialsInput button{
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 15px;
+
 }

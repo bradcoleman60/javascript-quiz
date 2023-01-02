@@ -10,19 +10,22 @@
   <body>
     
         <header>
-            <h1>JavaScript Knowledge Quiz</h1>
+            <section class="title-bar">
+              <h1>JavaScript Knowledge Quiz</h1>
+            </section>
+            <section class="countdown">
+              <p id="counter"></p>
+            </section>
         </header>
       
         <section class="welcome-message">
-            <h2>Welcome! If you want to test your Knowledge of Javascript, take this timed multiple choice quiz.  To start the quiz hit the "start quiz" buttom below.</h2>
+            <h2>Test your Knowledge of Javascript by taking this timed multiple choice quiz.  You will have 100 seconds to complete this quiz and each incorrect answer will decrement this time by 5 seconds. Good luck!</h2>
             <button type="button" class="start-quiz-button"  onclick="startQuiz()">Start Quiz</button>
         </section>
         
-        <section class="countdown">
-          <p id="counter"></p>
-        </section>
         
-        <section id="end-of-quiz-message">
+        
+        <section class="end-of-quiz-message" id="end-of-quiz-message">
             <p></p>
         </section>
                     
@@ -37,7 +40,7 @@
             </form>  
         </section>
                           
-        <section id="result"></section> 
+        <!-- <section class="result" id="result"></section>  -->
 
         <section class="initialsInput" id="initialsInput">
           <input type="text-box" name="initials-input" maxlength="3" placeholder="Input your initials here" required>
@@ -53,7 +56,7 @@
           </tr>
         </table>
 
-        <script src="./assets/js/script.js"></script>
+      <script src="./assets/js/script.js"></script>
       
         
   </body>
