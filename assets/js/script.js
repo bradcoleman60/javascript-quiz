@@ -1,7 +1,7 @@
 
 ///Global variables
 
-var secondsLeft = 5
+var secondsLeft = 100
 var countDownDom = document.querySelector(".countdown")
 
 
