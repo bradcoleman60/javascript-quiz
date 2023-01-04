@@ -112,12 +112,14 @@ function initialsInput(){
 }
 
 //////This function displays the leaderboard ///////////////
+var initialsDom = document.querySelector(".initialsInput");
+var leaderDom = document.querySelector(".leaderboard-table")
 
 function displayLeaderboard(){
 
-    var initialsDom = document.querySelector(".initialsInput");
+    
     initialsDom.setAttribute("style", "display: none");
-    var leaderDom = document.querySelector(".leaderboard-table")
+    
     leaderDom.setAttribute("style", "display: block");
     var table = document.getElementById("leaderboard-table");
 
@@ -130,7 +132,12 @@ function displayLeaderboard(){
         scoreCell.innerHTML = existingleaderBoard[i].score;
         percentageCell.innerHTML = existingleaderBoard[i].percentage;
     }
-}
 
+}
+function backToStart(){
+    leaderDom.setAttribute("style", "display: none");
+    welcomeDom.setAttribute("style", "display: flex");
+
+}
 
 
