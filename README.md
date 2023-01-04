@@ -18,16 +18,16 @@ Create components first
 
     Still to do:
 
-    1. Tigten up all CSS
-    2. Clear the check box after submission of answer
-    3. Develop the actual questions
-    4. Edit function Display Leader Board with conditional CSS
-    5. Sort the leader board highest to lowest and add %
-    6. Add something to time if person completes quiz before the time expires - to invoke "display: none" for the question and answer box. 
-    7. Should i put all global variables in one place on the JS file? 
-    8. Add ability to not enter initials "No thanks, but show me the leader board"
-    9. format the leaderbaord table
-    10. create another js file to hold the questions to make more module. 
+    1. Tigten up all CSS - done 
+    2. Clear the check box after submission of answer - done 
+    3. Develop the actual questions - done 
+    4. Edit function Display Leader Board with conditional CSS - done 
+    5. Sort the leader board highest to lowest and add % - done 
+    6. Add something to time if person completes quiz before the time expires - to invoke "display: none" for the question and answer box. - done 
+    7. Should i put all global variables in one place on the JS file? - done 
+    8. Add ability to not enter initials "No thanks, but show me the leader board" - done 
+    9. format the leaderbaord table - done 
+    10. create another js file to hold the questions to make more module.  NA 
 
 
     
@@ -61,16 +61,25 @@ The following is code that I created that I would like to highlight.
 
 To test to ensure the code rendered the desired output I iterated a series of tests to ensure that all acceptance criteria were met and documented completion below:
 
+1. WHEN I click the start button THEN a timer starts and I am presented with a question
 
-1. WHEN I click  
+ - **Completed**.  The 
 
-    - **Completed**.  The 
+2. WHEN I answer a question THEN I am presented with another question
 
-2. WHEN 
+ - **Completed**.  The 
 
-    - **Completed**.  The 
+3. WHEN I answer a question incorrectly THEN time is subtracted from the clock
 
-3. WHEN 
+ - **Completed**.  The 
+
+4. WHEN all questions are answered or the timer reaches 0 THEN the game is over
+
+ - **Completed**.  The 
+
+5. WHEN the game is over THEN I can save my initials and my score
+
+ - **Completed**.  The 
 
     
 # **Technology Used and Credits**

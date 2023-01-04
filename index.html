@@ -22,9 +22,7 @@
             <h2>Test your Knowledge of Javascript by taking this timed multiple choice quiz.  You will have 100 seconds to complete this quiz and each incorrect answer will decrement this time by 5 seconds. Good luck!</h2>
             <button type="button" class="start-quiz-button"  onclick="startQuiz()">Start Quiz</button>
         </section>
-        
-        
-        
+               
         <section class="end-of-quiz-message" id="end-of-quiz-message">
             <p></p>
         </section>
@@ -38,24 +36,23 @@
               <input type="radio" value="d" id="d" name="answer-choice"><label for="d">Answer D</label><br>
               <button type="button" onclick="submitAnswer()">Submit</button>
             </form>  
-        </section>
-                          
-        <!-- <section class="result" id="result"></section>  -->
+          </section>
 
         <section class="initialsInput" id="initialsInput">
-          <input type="text-box" name="initials-input" maxlength="3" placeholder="Input your initials here" required>
+          <input type="text-box" name="initials-input" maxlength="3" placeholder="initials" required >
           <button type="submit" onclick="initialsInput()">Submit</button>
           <button type="submit" onclick="displayLeaderboard()">No, thanks show me the leaderboard</button>
         </section>
         
-        <table class="leaderboard-table"  id="leaderboard-table">
+        <section class="leaderboard-table">
+        <table   id="leaderboard-table">
           <tr>
             <th>Initials</th>
             <th>Correct Answers</th>
             <th>Percent Correct</th>
           </tr>
         </table>
-
+      </section>
       <script src="./assets/js/script.js"></script>
       
         
