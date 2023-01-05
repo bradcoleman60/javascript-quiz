@@ -18,9 +18,16 @@
 
 # **Description**
 
-This goal of this project was to  
+This goal of this project was to create a timed multiple choice quiz on the topic of JavaScript.  This project expanded my use of Javascript including 1) using localstorage to store the scores of quizes, 2) using querySlectors to change the text on the HTML page, 3) using SetAttribute to change how elements of the page look and react, 4) changing CSS on the hover of an HTML element, 5) the use of a FOR loop to generate a table and then the use of inner.html to push the content of the table to the webpage 6) the use of an array within an array such that I had configure to indexes to retrieve the disired value, 7) the use of the setInterval method to create a count down timer that was decremented 5 seconds if the visitor submitted an incorrect answer.  
 
-[Screen Shot of page](screen_shot.png)
+When the visitor arrives at the page, there is a welcome message and a prominent "Start Quiz" button that, when clicked starts the quiz and the timer. Below is a screen  shot of the openning page. 
+
+![screnshot](/screen_shot_1.png)
+
+After the quiz is started the question box is populated with the multiple choice questions.  I used an html form along with an input type equal to "radio".   Although I considered using a check-box input type, I learned that 
+
+![screnshot](/screen_shot_2.png)
+
 
 # **Highlighted Code Example**
 
