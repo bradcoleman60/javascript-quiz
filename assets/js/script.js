@@ -1,5 +1,5 @@
 
-///Global variables
+//Global variables
 
 //Set the time alotment in seconds
 var secondsLeft = 100
@@ -14,9 +14,7 @@ var scoreCounter = 0;
 var answeredQuestions = 0;
 var questionDom = document.querySelector(".question-box");
 
-
 //This function creates the coundwon timer
-
 function setTimer() {
     var initialsDom = document.querySelector(".initialsInput");
     var timerInterval = setInterval(function() {
@@ -35,7 +33,6 @@ function setTimer() {
 }
 
 //Sets start quiz function.  This removes the welcome message and start quiz button and starts the quiz.
-
 function startQuiz() {
 
     var welcomeDom = document.querySelector(".welcome-message")
@@ -48,7 +45,6 @@ function startQuiz() {
 };
 
 //This function displays the question and multiple answers based on the question number. 
-
 function displayQuestionBox (){
     
     var answerDom = document.querySelector(".submission-form");
@@ -61,24 +57,16 @@ function displayQuestionBox (){
 
 
 //This function adds the end of quiz messgae after the timer reaches the end
-
 function endOfQuizMessage(){
-    document.getElementById('end-of-quiz-message').innerHTML = "The time is over and the quiz is done.  Your Score was: " + scoreCounter;
+    document.getElementById('end-of-quiz-message').innerHTML = "Thanks for taking the quiz. Your Score was: " + scoreCounter + " out of " + questionBank.length + ".";
     countDownDom.setAttribute("style", "display: none");
 };
 
 //This function obtains value of selected radio input and compares to the answer bank
-
 function submitAnswer(){
 
-    if (document.querySelector('input[type="radio"][name="answer-choice"]:checked').value === null){
-        alert("Please select an answer and then submit")
-    }
-    
-    else {
     var actualAnswerSelected = document.querySelector('input[type="radio"][name="answer-choice"]:checked').value;
-
-      
+    
     if (actualAnswerSelected === questionBank[questionNumber][5]){
         scoreCounter++;
         answeredQuestions++;
@@ -87,7 +75,7 @@ function submitAnswer(){
         secondsLeft = secondsLeft - 5;
         answeredQuestions++;
     };
-    }
+    
 
     if (answeredQuestions < questionBank.length){
         questionNumber++;
@@ -95,14 +83,11 @@ function submitAnswer(){
     }
     var touncheckRadio = document.querySelector('input[type="radio"][name="answer-choice"]:checked');
     touncheckRadio.checked = false;
-}
-
-//This function allows user to input initials and have those initials added to a leaderboard in local storage. 
-///Score to LeaderBoard
-
-var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
+};
 
 //This function allows user to input initials at the completion of the quiz
+var existingleaderBoard = JSON.parse(localStorage.getItem("leaderBoard"));
+
 function initialsInput(){
 
     var initialsThatWereInput = document.querySelector('input[type="text-box"][name="initials-input"]').value;
@@ -133,7 +118,7 @@ function displayLeaderboard(){
     //This removes the intials input box and submit button
     initialsDom.setAttribute("style", "display: none");
     //This displays the leaderboard
-    leaderDom.setAttribute("style", "display: block");
+    leaderDom.setAttribute("style", "display: flex");
     var table = document.getElementById("leaderboard-table");
 
     //This FOR loop iterates around the locally stored leaderboard and creates a table
@@ -155,4 +140,5 @@ function backToStart(){
         location.reload();
 }
 
+// localStorage.clear();
 

@@ -13,6 +13,7 @@
             <section class="title-bar">
               <h1>JavaScript Knowledge Quiz</h1>
             </section>
+            <!-- This holds the countdown timer -->
             <section class="countdown">
               <p id="counter"></p>
             </section>
@@ -22,11 +23,13 @@
             <h2>Test your Knowledge of Javascript by taking this timed multiple choice quiz.  You will have 100 seconds to complete this quiz and each incorrect answer will decrement this time by 5 seconds. Good luck!</h2>
             <button type="button" class="start-quiz-button"  onclick="startQuiz()">Start Quiz</button>
         </section>
-               
+             
+        <!-- This is shown only after time has expired or all questions have been answered -->
         <section class="end-of-quiz-message" id="end-of-quiz-message">
             <p></p>
         </section>
                     
+        <!-- This is the main question and answer box that is populated when the start quiz button is clicked -->
         <section class="question-box">
             <p class="the-question">The Question is here</p>
             <form class="submission-form">
@@ -37,21 +40,26 @@
             </form>  
           </section>
 
+          <!--After completion of the quiz this section is displayed to allow for initials to be entered and then to display the leader board in localStorage  -->
         <section class="initialsInput" id="initialsInput">
           <input type="text-box" name="initials-input" maxlength="3" placeholder="initials" required >
           <button type="submit" onclick="initialsInput()">Submit</button>
           <button type="submit" onclick="displayLeaderboard()">No, thanks show me the leaderboard</button>
         </section>
         
+        <!-- This is the leaderboard table that is displayed when initials are input OR when the "Display leaderboard button is clicked" -->
         <section class="leaderboard-table">
-        <table   id="leaderboard-table">
+        <table id="leaderboard-table">
           <tr>
             <th>Initials</th>
             <th>Correct Answers</th>
             <th>Percent Correct</th>
           </tr>
         </table>
-        <button type="submit" onclick="backToStart()">Retake the Quiz</button>
+        <!-- This button reloads the page do that the user can retake the quiz -->
+        <div id="back-to-start">
+        <button  type="submit" onclick="backToStart()">Retake the Quiz</button>
+      </div>
       </section>
       <script src="./assets/js/script.js"></script>
       
