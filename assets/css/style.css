@@ -35,7 +35,6 @@ header {
 }
 
 .start-quiz-button {
-
     border-radius: 20px;
     padding: 10px 30px 10px 30px;
     background-color: red;
@@ -103,16 +102,17 @@ header {
         
 }
 
+/* Turns the label for the answer to green on hover*/
 .submission-form label:hover {
-        background-color:  #76cf9f;
+    background-color:  #76cf9f;
     }
 
-
+/* This hides the radio button */
 input[type="radio"] {
     display: none;
 }
 
-/* Turns selected anwer green and bolds its text */
+/* Turns selected answer green and bolds its text */
 .submission-form input[type="radio"]:checked+label{
     background-color: #76cf9f;
     font-weight: bold;
@@ -166,7 +166,6 @@ table{
 }
 
 .initialsInput {
-    
     margin-top: 50px;
     flex-direction: column;
     justify-content: center;
